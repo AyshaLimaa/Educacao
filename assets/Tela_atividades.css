@@ -1,0 +1,35 @@
+* {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    color: #333;
+}
+.activity-list {
+    list-style-type: none;
+    padding: 0;
+}
+.activity-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.activity-item h2 {
+    margin: 0 0 10px;
+}
+.activity-item p {
+    margin: 5px 0;
+    color: #666;
+}
+.activity-item a {
+    text-decoration: none;
+    color: #007BFF;
+}
+.activity-item a:hover {
+    text-decoration: underline;
+}
