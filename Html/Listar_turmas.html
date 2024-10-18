@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turmas</title>
+  <link rel="stylesheet" href="/assets/Listar_turmas.css">
+</head>
+<body>
+  <div class="activity-container">
+    <header class="header">
+      <h1>Turmas</h1>
+      <a href="cadastro_turma.html" class="add-btn">+ Adicionar Turma</a>
+    </header>
+    <ul class="activity-list" id="turmaList"></ul>
+  </div>
+
+  <script>
+    // Carrega as turmas do localStorage e exibe na lista
+    function carregarTurmas() {
+      const turmas = localStorage.getItem('turmas')
+        ? JSON.parse(localStorage.getItem('turmas'))
+        : [];
+
+      const turmaList = document.getElementById('turmaList');
+      turmaList.innerHTML = ''; // Limpa a lista
+
+      turmas.forEach((turma, index) => {
+        const li = document.createElement('li');
+        li.classList.add('activity-item');
+        li.innerHTML = `
+          <div>
+            <strong>${turma.nome}</strong><br>
+            <small>Ano Letivo: ${turma.ano}</small><br>
+            <small>Professor Responsável: ${turma.responsavel}</small>
+          </div>
+          <button class="delete-btn" onclick="removerTurma(${index})">X</button>
+        `;
+        turmaList.appendChild(li);
+      });
+    }
+
+    // Função para remover uma turma
+    function removerTurma(index) {
+      const turmas = JSON.parse(localStorage.getItem('turmas'));
+      turmas.splice(index, 1);
+      localStorage.setItem('turmas', JSON.stringify(turmas));
+      carregarTurmas();
+    }
+
+    // Carrega a lista de turmas quando a página é aberta
+    window.onload = carregarTurmas;
+  </script>
+</body>
+</html>

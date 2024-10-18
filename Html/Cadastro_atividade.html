@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Atividade</title>
+    <link rel="stylesheet" href="/assets/Cadastro_atividade.css"> <!-- Certifique-se de que o caminho do CSS está correto -->
+</head>
+<body>
+    <div class="activity-container">
+        <header class="header">
+            <h1>Cadastrar Atividade</h1>
+        </header>
+        <form id="atividadeForm">
+            <div class="input-group">
+                <label for="descricao">Descrição da Atividade:</label>
+                <input type="text" id="descricao" placeholder="Ex: Trabalho de Matemática" required>
+            </div>
+            <div class="input-group">
+                <label for="professor">Nome do Professor:</label>
+                <input type="text" id="professor" placeholder="Ex: Professor Silva" required>
+            </div>
+            <div class="input-group">
+                <label for="dataEntrega">Data de Entrega:</label>
+                <input type="date" id="dataEntrega" required>
+            </div>
+            <button type="submit" class="login-btn">Cadastrar</button>
+        </form>
+        <div class="btn-container">
+            <a href="/Html/Tela_atividades.html" class="back-btn">← Voltar para Atividades</a>
+            <a href="/Html/Tela_principal.html" class="main-btn">🏠 Voltar para Tela Principal</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('atividadeForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o recarregamento da página
+
+            const descricao = document.getElementById('descricao').value;
+            const professor = document.getElementById('professor').value;
+            const dataEntrega = document.getElementById('dataEntrega').value;
+
+            if (descricao && professor && dataEntrega) {
+                const atividades = localStorage.getItem('atividades')
+                    ? JSON.parse(localStorage.getItem('atividades'))
+                    : [];
+
+                // Adiciona uma nova atividade ao array
+                atividades.push({ descricao, professor, dataEntrega });
+
+                // Salva no localStorage
+                localStorage.setItem('atividades', JSON.stringify(atividades));
+                alert('Atividade cadastrada com sucesso!');
+                window.location.href = 'atividades.html'; // Redireciona para a lista de atividades
+            }
+        });
+    </script>
+</body>
+</html>

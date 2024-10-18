@@ -1,100 +1,105 @@
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f3f4f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-.form-container {
-    background-color: #ffffff;
+/* Fundo */
+body {
+    background: linear-gradient(135deg, rgb(78, 9, 9), rgb(137, 31, 31)); /* Gradiente vinho */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container */
+.activity-container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #ffffff; /* Branco sólido */
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
+/* Cabeçalho */
+.header {
     text-align: center;
     margin-bottom: 30px;
-    font-size: 24px;
-    color: #333;
-    font-weight: 600;
 }
 
-label {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 8px;
-    display: block;
-    font-weight: 500;
+.header h1 {
+    color: rgb(78, 9, 9); /* Vinho */
+    font-size: 26px;
 }
 
-input[type="text"], input[type="date"], textarea {
-    width: 100%;
-    padding: 12px 15px;
+/* Estilo dos campos de entrada */
+.input-group {
     margin-bottom: 20px;
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    font-size: 14px;
-    background-color: #fafafa;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: all 0.2s ease;
 }
 
-input[type="text"]:focus, input[type="date"]:focus, textarea:focus {
-    outline: none;
-    border-color: brown;
-    box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: rgb(78, 9, 9); /* Vinho */
 }
 
-textarea {
-    resize: none;
-    height: 120px;
-}
-
-.btn {
+.input-group input[type="text"],
+.input-group input[type="date"] {
     width: 100%;
-    padding: 14px;
-    background-color: brown;
+    padding: 10px;
+    border: 2px solid rgb(137, 31, 31); /* Vinho */
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="date"]:focus {
+    border-color: rgb(78, 9, 9); /* Vinho escuro */
+    outline: none;
+}
+
+/* Botões */
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-btn, .back-btn, .main-btn {
+    background-color: rgb(137, 31, 31); /* Vinho */
     color: white;
     border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: gray;
-}
-
-.btn-cancel {
-    background-color: rgba(85, 17, 30, 0.908);
-    margin-top: 10px;
-}
-
-.btn-cancel:hover {
-    background-color: rgba(85, 17, 30, 0.908);
-}
-
-.form-footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #888;
-}
-
-.form-footer a {
-    color: #4a90e2;
+    padding: 12px;
+    border-radius: 6px;
     text-decoration: none;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 5px; /* Espaço entre os botões */
+    transition: background 0.3s;
 }
 
-.form-footer a:hover {
-    text-decoration: underline;
+.add-btn:hover, .back-btn:hover, .main-btn:hover {
+    background-color: rgb(78, 9, 9); /* Vinho escuro */
+}
+
+/* Botão de cadastrar */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(78, 9, 9); /* Vinho escuro */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.login-btn:hover {
+    background-color: rgb(137, 31, 31); /* Vinho */
 }

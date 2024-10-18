@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Turma</title>
+  <link rel="stylesheet" href="/assets/Cadastro_turma.css">
+</head>
+<body>
+  <div class="activity-container">
+    <header class="header">
+      <h1>Cadastrar Turma</h1>
+    </header>
+    <form id="turmaForm">
+      <div class="input-group">
+        <label for="nomeTurma">Nome da Turma:</label>
+        <input type="text" id="nomeTurma" placeholder="Ex: 3º Ano B" required>
+      </div>
+      <div class="input-group">
+        <label for="anoLetivo">Ano Letivo:</label>
+        <input type="number" id="anoLetivo" placeholder="Ex: 2024" required>
+      </div>
+      <div class="input-group">
+        <label for="responsavel">Professor Responsável:</label>
+        <input type="text" id="responsavel" placeholder="Ex: Professor Maria" required>
+      </div>
+      <button type="submit" class="login-btn">Cadastrar</button>
+    </form>
+    
+    <!-- Botões de Navegação -->
+    <div class="btn-container">
+      <a href="/Html/Listar_turmas.html" class="back-btn">← Voltar para Turmas</a> <!-- Link para a lista de turmas -->
+      <a href="/Html/Tela_principal.html" class="main-btn">🏠 Tela Principal</a> <!-- Link para a tela principal -->
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('turmaForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Evita o recarregamento da página
+
+      const nome = document.getElementById('nomeTurma').value;
+      const ano = document.getElementById('anoLetivo').value;
+      const responsavel = document.getElementById('responsavel').value;
+
+      if (nome && ano && responsavel) {
+        const turmas = localStorage.getItem('turmas')
+          ? JSON.parse(localStorage.getItem('turmas'))
+          : [];
+
+        // Adiciona uma nova turma ao array
+        turmas.push({ nome, ano, responsavel });
+
+        // Salva no localStorage
+        localStorage.setItem('turmas', JSON.stringify(turmas));
+        alert('Turma cadastrada com sucesso!');
+        window.location.href = 'turmas.html'; // Redireciona para a lista de turmas
+      }
+    });
+  </script>
+</body>
+</html>

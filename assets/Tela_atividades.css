@@ -1,35 +1,96 @@
 * {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
-h1 {
-    color: #333;
+
+/* Fundo */
+body {
+    background: linear-gradient(135deg, rgb(78, 9, 9), rgb(137, 31, 31)); /* Gradiente vinho */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* Container */
+.activity-container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #ffffff; /* Branco sólido */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: rgb(78, 9, 9); /* Vinho */
+    font-size: 26px;
+}
+
+/* Lista de atividades */
 .activity-list {
-    list-style-type: none;
+    list-style: none;
+    margin: 20px 0;
     padding: 0;
 }
+
 .activity-item {
-    background-color: white;
-    border: 1px solid #ddd;
-    margin: 10px 0;
-    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.activity-item h2 {
-    margin: 0 0 10px;
+
+/* Texto da atividade */
+.activity-text {
+    color: rgb(78, 9, 9);
 }
-.activity-item p {
-    margin: 5px 0;
-    color: #666;
+
+/* Botão de deletar */
+.delete-btn {
+    background-color: #ff6b6b;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
-.activity-item a {
+
+.delete-btn:hover {
+    background-color: #ff4757;
+}
+
+/* Botões */
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.add-btn, .main-btn {
+    background-color: rgb(137, 31, 31); /* Vinho */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
     text-decoration: none;
-    color: #007BFF;
+    flex: 1;
+    margin: 0 8px; /* Espaço entre os botões */
+    transition: background 0.3s;
 }
-.activity-item a:hover {
-    text-decoration: underline;
+
+
+.add-btn:hover, .main-btn:hover {
+    background-color: rgb(78, 9, 9); /* Vinho escuro */
 }

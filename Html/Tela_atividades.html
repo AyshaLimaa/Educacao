@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades</title>
+    <link rel="stylesheet" href="/assets/Tela_atividades.css"> <!-- Certifique-se de que o caminho do CSS está correto -->
+</head>
+<body>
+    <div class="activity-container">
+        <header class="header">
+            <h1>Lista de Atividades</h1>
+        </header>
+        <ul class="activity-list" id="activityList">
+            <!-- As atividades serão listadas aqui -->
+        </ul>
+        <div class="btn-container">
+            <a href="/Html/Cadastro_atividade.html" class="add-btn">+ Adicionar Atividade</a>
+            <a href="/Html/Tela_principal.html" class="main-btn">🏠 Voltar para Tela Principal</a>
+        </div>
+    </div>
+
+    <script>
+        // Função para carregar e exibir as atividades
+        function loadActivities() {
+            const atividades = JSON.parse(localStorage.getItem('atividades')) || [];
+            const activityList = document.getElementById('activityList');
+            activityList.innerHTML = ''; // Limpa a lista antes de adicionar os itens
+
+            // Verifica se a lista está vazia e adiciona atividades padrão
+            if (atividades.length === 0) {
+                atividades.push(
+                    { descricao: "Trabalho de Matemática", professor: "Professor Silva", dataEntrega: "2024-10-25" },
+                    { descricao: "Tarefas Escolares", professor: "Professor Oliveira", dataEntrega: "2024-10-20" }
+                );
+                localStorage.setItem('atividades', JSON.stringify(atividades)); // Salva as atividades padrão no localStorage
+            }
+
+            atividades.forEach((atividade, index) => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('activity-item');
+
+                listItem.innerHTML = `
+                    <span class="activity-text">${atividade.descricao} - Professor: ${atividade.professor} - Data de Entrega: ${atividade.dataEntrega}</span>
+                    <button class="delete-btn" onclick="deleteActivity(${index})">🗑️</button>
+                `;
+                activityList.appendChild(listItem);
+            });
+        }
+
+        // Função para deletar uma atividade
+        function deleteActivity(index) {
+            const atividades = JSON.parse(localStorage.getItem('atividades')) || [];
+            atividades.splice(index, 1); // Remove a atividade pelo índice
+            localStorage.setItem('atividades', JSON.stringify(atividades)); // Atualiza o localStorage
+            loadActivities(); // Recarrega a lista de atividades
+        }
+
+        // Carrega as atividades ao iniciar a página
+        loadActivities();
+    </script>
+</body>
+</html>
