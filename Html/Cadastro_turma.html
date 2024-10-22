@@ -1,61 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastrar Turma</title>
-  <link rel="stylesheet" href="/assets/Cadastro_turma.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Turma</title>
+    <link rel="stylesheet" href="/assets/Cadastro_turma.css">
 </head>
 <body>
-  <div class="activity-container">
-    <header class="header">
-      <h1>Cadastrar Turma</h1>
-    </header>
+
+<div class="container" id="formContainer">
+    <h2>Cadastro de Turma</h2>
     <form id="turmaForm">
-      <div class="input-group">
-        <label for="nomeTurma">Nome da Turma:</label>
-        <input type="text" id="nomeTurma" placeholder="Ex: 3º Ano B" required>
-      </div>
-      <div class="input-group">
+        <label for="serie">Série:</label>
+        <select id="serie" required>
+            <option value="" disabled selected>Selecione a série</option>
+            <option value="1º Ano">1º Ano</option>
+            <option value="2º Ano">2º Ano</option>
+            <option value="3º Ano">3º Ano</option>
+            <option value="4º Ano">4º Ano</option>
+            <option value="5º Ano">5º Ano</option>
+            <option value="6º Ano">6º Ano</option>
+            <option value="7º Ano">7º Ano</option>
+            <option value="8º Ano">8º Ano</option>
+            <option value="9º Ano">9º Ano</option>
+        </select>
+
         <label for="anoLetivo">Ano Letivo:</label>
-        <input type="number" id="anoLetivo" placeholder="Ex: 2024" required>
-      </div>
-      <div class="input-group">
-        <label for="responsavel">Professor Responsável:</label>
-        <input type="text" id="responsavel" placeholder="Ex: Professor Maria" required>
-      </div>
-      <button type="submit" class="login-btn">Cadastrar</button>
+        <input type="number" id="anoLetivo" placeholder="Ex: 2024" min="2000" max="2100" required>
+
+        <label for="professor">Professor Responsável:</label>
+        <input type="text" id="professor" placeholder="Nome do Professor" required>
+
+        <button type="submit">Cadastrar</button>
+        <button type="button" onclick="verTurmas()">Ver Turmas</button>
     </form>
-    
-    <!-- Botões de Navegação -->
-    <div class="btn-container">
-      <a href="/Html/Listar_turmas.html" class="back-btn">← Voltar para Turmas</a> <!-- Link para a lista de turmas -->
-      <a href="/Html/Tela_principal.html" class="main-btn">🏠 Tela Principal</a> <!-- Link para a tela principal -->
-    </div>
-  </div>
 
-  <script>
-    document.getElementById('turmaForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Evita o recarregamento da página
+    <button onclick="window.location.href='Tela_principal.html'">Voltar para Tela Principal</button>
+</div>
 
-      const nome = document.getElementById('nomeTurma').value;
-      const ano = document.getElementById('anoLetivo').value;
-      const responsavel = document.getElementById('responsavel').value;
+<div class="container" id="turmaListContainer" style="display:none;">
+    <h2>Turmas Cadastradas</h2>
+    <ul id="turmaList"></ul>
+    <button onclick="voltarCadastro()">Voltar para Cadastro</button>
+</div>
 
-      if (nome && ano && responsavel) {
-        const turmas = localStorage.getItem('turmas')
-          ? JSON.parse(localStorage.getItem('turmas'))
-          : [];
+<script src="script_turma.js"></script>
 
-        // Adiciona uma nova turma ao array
-        turmas.push({ nome, ano, responsavel });
-
-        // Salva no localStorage
-        localStorage.setItem('turmas', JSON.stringify(turmas));
-        alert('Turma cadastrada com sucesso!');
-        window.location.href = 'turmas.html'; // Redireciona para a lista de turmas
-      }
-    });
-  </script>
 </body>
 </html>

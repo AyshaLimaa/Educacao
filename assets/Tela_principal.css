@@ -1,48 +1,127 @@
+/* Estilo geral do corpo */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #671010, rgba); /* Preto degradê */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-        body {
-            font-family: comic sans-serif, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: rgb(84, 29, 43);
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            margin: 50px 0;
-        }
-        .menu {
-            width: 300px;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .menu h2 {
-            text-align: center;
-            color: #333;
-        }
-        .menu ul {
-            list-style: none;
-            padding: 0;
-        }
-        .menu ul li {
-            margin: 15px 0;
-        }
-        .menu ul li a {
-            text-decoration: none;
-            background-color: rgb(84, 29, 43);
-            color: white;
-            padding: 10px 15px;
-            display: block;
-            text-align: center;
-            border-radius: 5px;
-        }
-        .menu ul li a:hover {
-            background-color:rgb(84, 29, 43);
-        }
-   
+/* Estilização do cabeçalho (Painel do Professor) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semitransparente */
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    border-radius: 8px;
+    width: 100%;
+    max-width: 900px; /* Tamanho reduzido */
+    margin-top: 30px; /* Desce o cabeçalho */
+    position: relative; /* Cabeçalho não fixo */
+}
+    .sair-btn {
+        margin-right: 30px; /* Aumente a margem para afastar mais */
+        padding: 10px 15px;
+        background-color: #f6f6f6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+/* Estilos adicionais podem ser colocados aqui */
+
+/* Estilização do título do cabeçalho */
+header h1 {
+    font-size: 22px;
+    color: #800000; /* Cor vinho */
+    font-weight: bold;
+}
+
+/* Link de acesso à conta */
+.account-access a {
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #f6f6f6;
+    color: #800000; /* Cor vinho */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.account-access a:hover {
+    color: #660000; /* Cor vinho escuro ao passar o mouse */
+}
+
+/* Container principal (menu) */
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semitransparente */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 350px; /* Contêiner mais compacto */
+    text-align: center;
+    margin-top: 50px; /* Pequena distância entre o cabeçalho e o menu */
+}
+
+/* Título do menu */
+.menu h2 {
+    font-size: 22px;
+    color: #800000; /* Cor vinho */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Estilização dos botões do menu */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin-bottom: 15px;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 12px;
+    background-color: #800000; /* Cor vinho */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.menu ul li a:hover {
+    background-color: #660000; /* Vinho escuro */
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        margin-bottom: 15px;
+    }
+
+    .container {
+        width: 90%;
+    }
+}

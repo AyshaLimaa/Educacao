@@ -1,105 +1,87 @@
-* {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c; /* Preto */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Fundo */
-body {
-    background: linear-gradient(135deg, rgb(78, 9, 9), rgb(137, 31, 31)); /* Gradiente vinho */
-    height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
-/* Container */
-.activity-container {
-    width: 100%;
-    max-width: 450px;
-    background-color: #ffffff; /* Branco sólido */
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Cabeçalho */
-.header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.header h1 {
-    color: rgb(78, 9, 9); /* Vinho */
-    font-size: 26px;
-}
-
-/* Estilo dos campos de entrada */
-.input-group {
+/* Container Principal */
+.container {
+    background-color: #fff; /* Branco */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 400px;
     margin-bottom: 20px;
 }
 
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
+/* Título */
+h2 {
+    text-align: center;
+    color: #8B0000; /* Vinho */
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Inputs e Botões */
+label {
     font-weight: bold;
-    color: rgb(78, 9, 9); /* Vinho */
+    color: #333; /* Cinza escuro */
 }
 
-.input-group input[type="text"],
-.input-group input[type="date"] {
-    width: 100%;
+input, select, textarea, button {
     padding: 10px;
-    border: 2px solid rgb(137, 31, 31); /* Vinho */
-    border-radius: 6px;
-    font-size: 16px;
-    transition: border-color 0.3s;
+    border-radius: 4px;
+    border: 1px solid #8B0000; /* Vinho */
+    margin-top: 5px;
 }
 
-.input-group input[type="text"]:focus,
-.input-group input[type="date"]:focus {
-    border-color: rgb(78, 9, 9); /* Vinho escuro */
-    outline: none;
+button {
+    background-color: #8B0000; /* Vinho */
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-/* Botões */
-.btn-container {
+button:hover {
+    background-color: #600000; /* Vinho escuro */
+}
+
+/* Grupo de Botões */
+.btn-group {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
-.add-btn, .back-btn, .main-btn {
-    background-color: rgb(137, 31, 31); /* Vinho */
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    cursor: pointer;
-    flex: 1;
-    margin: 0 5px; /* Espaço entre os botões */
-    transition: background 0.3s;
+/* Botões Secundários */
+.btn-secondary {
+    background-color: #333; /* Cinza escuro */
 }
 
-.add-btn:hover, .back-btn:hover, .main-btn:hover {
-    background-color: rgb(78, 9, 9); /* Vinho escuro */
+.btn-secondary:hover {
+    background-color: #000; /* Preto */
 }
 
-/* Botão de cadastrar */
-.login-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: rgb(78, 9, 9); /* Vinho escuro */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 20px;
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.login-btn:hover {
-    background-color: rgb(137, 31, 31); /* Vinho */
+li {
+    background-color: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #8B0000;
 }

@@ -1,137 +1,60 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Fundo */
-  body {
-    background-color: #8B0000; /* Vinho */
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Container */
-  .activity-container {
-    width: 100%;
-    max-width: 400px;
-    background-color: #fff; /* Branco */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Cabeçalho */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .header h1 {
-    color: #8B0000; /* Vinho */
-    font-size: 24px;
-  }
-  
-  .add-btn, .back-btn {
-    background-color: #8B0000; /* Vinho */
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .add-btn:hover, .back-btn:hover {
-    background-color: #A52A2A; /* Tom mais claro de vinho */
-  }
-  
-  /* Lista de atividades */
-  .activity-list {
-    list-style: none;
-    margin-top: 10px;
-  }
-  
-  .activity-item {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f5f5f5;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
-  
-  /* Botão de deletar */
-  .delete-btn {
-    background-color: #8B0000;
-    border: none;
-    padding: 5px 10px;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .delete-btn:hover {
-    background-color: #A52A2A;
-  }
-  
-  /* Botão de formulário */
-  .login-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #8B0000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .login-btn:hover {
-    background-color: #A52A2A;
-  }
-  
-  /* Input e textarea */
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #8B0000;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #8B0000;
-    border-radius: 5px;
-  }
-  .btn-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px; /* Adiciona um espaço abaixo dos botões */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.back-btn, .main-btn {
-    background-color: rgb(137, 31, 31); /* Cor vinho */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s;
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  margin: 10px;
 }
 
-.back-btn:hover, .main-btn:hover {
-    background-color: rgb(78, 9, 9); /* Cor vinho mais escura */
+h2 {
+  text-align: center;
+  color: #8B0000;
+}
+
+form, ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  background-color: #8B0000;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px; /* Adiciona espaço entre os botões */
+}
+
+button:hover {
+  background-color: #600000;
+}
+
+/* Adiciona mais espaço entre os itens da lista */
+ul {
+  list-style-type: none;
+  padding: 0;
+  gap: 10px;
+}
+
+li {
+  background-color: #f4f4f4;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #8B0000;
+  border-radius: 4px;
 }
